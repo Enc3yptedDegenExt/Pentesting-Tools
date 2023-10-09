@@ -1,0 +1,33 @@
+DNSRecon
+        DNSRecon, as it is known today, is the Python equivalent of a Ruby script originally written by Carlos Perez toward the end of 2006. In his own words, this tool largely emerged from his personal need to reflect DNS-related data collection in an intuitive manner while the Python version allowed him to practice his newly acquired skills with the programming language.
+
+DNSRecon can perform a variety of functions ranging from security assessments to basic network troubleshooting by allowing users to:
+
+    - Check DNS server cache records for A, AAAA, and CNAME records given a list of host records in a text file
+    - Enumerate general DNS records for a given domain (MX, SOA, NS, A, AAAA, SPF, and TXT)
+    - Check all NS records for zone transfers
+    - Check for wildcard resolution
+    - Perform common SRV record enumeration and top-level domain (TLD) expansion
+    - Check brute force subdomain and host A and AAAA records given a domain and a wordlist
+    - Perform a PTR record lookup for a given IP range or CIDR
+    - Perform subdomain and host enumeration via Google Dorks
+    - Present findings in text file format for easy manipulation
+
+
+Installing DNSRecon
+
+install DNSRecon using a specific Linux distribution's package manager or simply from its source repository, Python 3.6+ will be required.
+
+After that, the installation steps are as follows:
+
+    Step 1: Install the git package if not available (e.g., sudo apt install git) and python3-pip to handle package management requirements for Python.
+
+    Step 2: Clone the source archive to your preferred location on disk:
+            
+            git clone https://github.com/darkoperator/dnsrecon.git
+
+    Step 3: Once inside the dnsrecon directory, install the library requirements like so:
+           
+            python3-pip install -r requirements.txt --no-warn-script-location
+
+    Step 4: Run python3 dnsrecon.py -h
