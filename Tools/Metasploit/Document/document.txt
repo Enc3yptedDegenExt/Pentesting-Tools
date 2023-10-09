@@ -1,0 +1,44 @@
+Tool : "Metasploit"
+Intern ID : HPTI-SEP23-214
+
+                                              
+           
+
+                                                           **DESCRIPTION** 
+  
+  
+Metasploit is a powerful open-source penetration testing framework that provides a wide range of tools and resources for exploiting vulnerabilities, 
+developing custom exploits, automating tasks, and performing post-exploitation activities. Metasploit is included by default in Kali Linux, 
+a popular Linux distribution for penetration testing and security research.
+
+                                              **How to use Metasploit on Kali Linux**
+
+Getting started with Metasploit on Kali Linux
+
+To start using Metasploit on Kali Linux, open a terminal and navigate to the Metasploit directory:
+
+cd /usr/share/metasploit-framework
+  
+Once you are in the Metasploit directory, you can start the Metasploit console by running the following command:
+
+*msfconsole
+  
+The Metasploit console is a text-based interface that provides access to all of the features of the Metasploit framework.
+
+*Exploiting vulnerabilities
+
+To exploit a vulnerability with Metasploit, you first need to load the exploit module for the vulnerability. You can do this by running the following command:
+
+*use [exploit module name]
+Once the exploit module is loaded, you can set the options for the exploit and then run it by running the following command:
+
+exploit
+If the exploit is successful, you will gain access to the target system.
+
+
+Metasploit also provides a number of tools for automating tasks. For example, you can use the Metasploit console to automate the following tasks:
+
+1.Scanning networks for vulnerabilities
+2.Exploiting vulnerabilities
+3.Gathering information from target systems
+4.Performing post-exploitation activities
