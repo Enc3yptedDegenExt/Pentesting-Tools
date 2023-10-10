@@ -1,0 +1,98 @@
+-----------------------------------------------
+**************  HPING3 For VAPT ************************
+INTRODUCTION
+-> A thorough understanding of networking principles, security flaws, and a variety of tools are necessary for doing network Vulnerability Assessment and Penetration Testing (VAPT). One of the tools you can use in these examinations is HPING3. An introduction to using HPING3 for network VAPT is provided here:
+----------
+Disclaimer
+----------
+Use this tool only if you control the network or have express permission to test it. It is illegal and unethical to use HPING3 or any other VAPT tools without authorization on networks that you do not own.
+-----
+USES
+-----
+1. Ping Sweep for Network Discovery: 
+    Use HPING3 to find hosts on a network:
+    " sudo hping3 -1 -c 3 192.168.1.0/24 "
+      -1: Use ICMP echo requests (ping).
+      -c 3: Send 3 packets to each host.
+      192.168.1.0/24: Specify the IP range.
+
+2. TCP Port Scan: 
+  Check a number of TCP ports on the target host.
+    " sudo hping3 -S -p 1-1000 target_ip "
+      -S: Send TCP SYN packets.
+      -p 1-1000: Specify the range of ports to scan.
+  UDP Port Scan:
+  Scan a range of UDP ports on a target host:
+    " sudo hping3 -2 -p U:1-1000 target_ip '
+      -2: Use UDP ping.
+
+3. Banner Grabbing: 
+  Retrieve service banners from open ports:
+    " sudo hping3 -S -p 80 --scan known target_ip "
+      --scan known: Try to identify the service based on known ports.
+
+4. Firewall Testing:
+  Firewall Rule Analysis:
+    Determine if a firewall allows or blocks specific ports:
+    " sudo hping3 -S -p 22 -c 3 firewall_ip "
+      -p 22: Specify the port you want to test.
+
+5. Fragmentation and Evasion:
+  Test how a target handles fragmented packets:
+  " sudo hping3 -S -f -p 80 target_ip "
+      -f: Set the fragmentation bit.
+
+6. SYN Flood (DoS Attack):
+  Use responsibly; only on networks you have permission to test:
+  " sudo hping3 -c 10000 -d 120 -S -w 64 -p 80 --flood target_ip "
+    -c 10000: Send 10,000 packets.
+    -d 120: Set the data size to 120 bytes.
+    -w 64: Set the TCP window size.
+    --flood: Flood mode to send packets as fast as possible.
+
+7. Custom Packet Crafting:
+  Craft custom packets for specific vulnerability testing:
+  " sudo hping3 -E packet_data -c 1 target_ip "
+    -E packet_data: Specify the hexadecimal data for the custom packet.
+    -c 1: Send a single packet.
+
+8. Traceroute and Path Analysis:
+  Perform a traceroute-like operation:
+  " sudo hping3 --traceroute target_ip "
+    --traceroute: Perform a traceroute using ICMP echo requests.
+
+9. IP Spoofing:
+  Test how the network reacts to IP address spoofing:
+  " sudo hping3 -S -a spoofed_ip target_ip "
+    -a spoofed_ip: Spoof the source IP address.
+
+10. OS Fingerprinting:
+  Attempt to identify the target's operating system:
+  " sudo hping3 -S -p 80 -F -A -V -O target_ip "
+  -F: Set the FIN flag.
+  -A: Set the ACK flag.
+  -V: Set the CWR flag.
+  -O: Perform OS fingerprinting.
+
+11. TCP Flags Manipulation:
+  Craft packets with various TCP flags for testing:
+  " sudo hping3 -S -F -A -P -U -Y -V target_ip "
+    -P: Set the PUSH flag.
+    -U: Set the URG flag.
+    -Y: Set the ECN flag.
+
+12. TTL Manipulation:
+  Test how the network handles TTL (Time to Live) values:
+  " sudo hping3 -c 3 -p 80 --ttl 1 target_ip "
+    --ttl 1: Set the TTL value to 1.
+
+13. MTU Discovery:
+Discover the Maximum Transmission Unit (MTU) size of a network path:
+  " sudo hping3 -c 3 -p 80 --mtu target_ip "
+    --mtu: Perform MTU discovery.
+
+14. TCP Window Size:
+Adjust the TCP window size:
+  " sudo hping3 -S -p 80 -w 1024 target_ip "
+    -w 1024: Set the TCP window size
+
