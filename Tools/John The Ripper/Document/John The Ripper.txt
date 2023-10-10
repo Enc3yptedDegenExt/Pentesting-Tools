@@ -1,0 +1,81 @@
+                                                        -----------------
+                                                          INTRODUCTION
+                                                        -----------------
+John the Ripper is like a tool used by computer experts to test how strong passwords are and to find passwords hidden in files. 
+It's called "John" for short. Below are the ways with which it works: 
+-Dictionary Attack: John the Ripper uses a wordlist containing common words, phrases, and patterns to attempt to crack passwords. 
+It compares each entry in the wordlist against the hashed passwords in the target file. 
+
+-Brute-Force Attack: In a brute-force attack, John the Ripper systematically generates and tests all possible combinations of characters until it finds the correct password. 
+This method is time-consuming and resource-intensive but can be effective against weak and short passwords. 
+
+-Hybrid Attack: This is a combination of dictionary and brute-force attacks. J
+John the Ripper uses the wordlist as a base and applies various modifications and transformations to the words to create additional password guesses. 
+
+-Rainbow Tables: John the Ripper can use precomputed rainbow tables to speed up password cracking for some hash algorithms. 
+Rainbow tables are large tables of precomputed hashes and their corresponding plaintext passwords. 
+
+John the Ripper supports a wide range of hash algorithms and encryption methods, making it versatile for various password cracking scenarios.
+It can work on Unix-style password hashes (such as those found in /etc/passwd) and various other password-protected file formats. 
+
+                                                                 -----------------
+                                                                    INSTALLATION 
+                                                                 -----------------
+We can download the John the Ripper package in 2 ways in Ubutu: 
+-Using APT Package Manager 
+-Using Snap Utility 
+
+Let’s go through both the installation methods one by one. 
+
+Method 1: Using APT Package Manager 
+
+	Step 1: Launch your system terminal and enter the following command to change your working directory to /opt.  
+	"sudo apt-get install john" 
+
+Method 2: Using Snap Utility 
+	Step 1: Execute the below command in the terminal to install the snapd on the system. 
+	"sudo apt install snapd"  
+
+	Step 2: Now, execute the below command to install the John the Ripper tool using snap. 
+	"sudo snap install john-the-ripper "
+
+	Step 3: Now, type the following command and press enter to ‘launch John-the-ripper tool’. 
+	"John" 
+                                                                 -----------------
+                                                        	     HOW TO USE
+                                                                 -----------------
+-Prepare the Target Data: 
+
+To crack passwords, you'll need access to the hashed passwords you want to crack. 
+These can be obtained from various sources, such as password files or databases. 
+Save the hashed passwords in a text file. Each hashed password should be on a separate line. 
+
+-Create a Wordlist (Optional): 
+
+John the Ripper can use a wordlist for dictionary attacks. You can create your own wordlist or use one of the existing ones. 
+Wordlists contain common words, phrases, and patterns that John will use to guess passwords. 
+
+-Run John the Ripper: 
+
+Open a terminal or command prompt. 
+Navigate to the directory where John the Ripper is installed or located. 
+To crack passwords using a wordlist, 
+use the following command, replacing [hashfile] with the path to your hashed passwords file and [wordlist] with the path to your wordlist (if you have one): 
+	"john --wordlist=[wordlist] [hashfile]"
+
+For example: 
+	"john --wordlist=/path/to/wordlist.txt /path/to/hashed-passwords.txt"
+
+To perform a brute-force attack (trying all possible combinations of characters), you can use: 
+	"john --incremental [hashfile]"
+
+This is a time-consuming and resource-intensive method, so it's generally used as a last resort. 
+John will start working on cracking the passwords, and it will display progress and any cracked passwords it finds. 
+
+-View the Results: 
+Once John completes its operation, it will display the cracked passwords if it was successful. 
+ 
+
+ 
+
+ 
