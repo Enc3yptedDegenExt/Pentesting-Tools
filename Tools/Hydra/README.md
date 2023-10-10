@@ -14,7 +14,7 @@ This repository contains research work conducted by our team on the Hydra pentes
   - Explanation Video - A video providing a thorough explanation of the entire Hydra pentesting tool, its features, and practical demonstrations.
 
 ## Team Members
-
+- Arpit Rai  -HPTI-SEP23-037-(@Arpit-rai18)
 - Vivek Gautam -HPTI-SEP23-277-(@thevivekmallik)
 - Rajani Misal -HPTI-SEP23-193-(@27RajaniMisal)
 - Shoana Anjum -HPTI-SEPT23-227-(@shoanjum10)
