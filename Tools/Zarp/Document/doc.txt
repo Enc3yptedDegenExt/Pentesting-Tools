@@ -1,0 +1,8 @@
+Zarp is a network attack tool that focuses on exploiting vulnerabilities within local networks. Instead of targeting system vulnerabilities, it leverages weaknesses in networking protocols and stacks to gain control, infiltrate, and disrupt network operations.
+It allows users to manage sessions efficiently, enabling the poisoning and sniffing of multiple systems simultaneously.
+It can automatically extract sensitive information or forward it to the attacker. Additionally, Zarp features various sniffing capabilities to extract usernames and passwords from different protocols and monitor HTTP traffic, among other functionalities. 
+It also offers Denial of Service (DoS) attack tools to disrupt various systems and applications. These tools empower users to execute complex attacks on live networks discreetly and efficiently.
+
+The ultimate objective of Zarp is to evolve into a network's central command center. It aims to provide a modular and well-defined framework that offers a comprehensive overview and in-depth analysis of the entire network. 
+This vision will materialize with the introduction of a web application front-end, acting as the user interface, while the command-line interface (CLI) will serve as the remote control. The web application will provide valuable features such as network topology reports and insights into host relationships. 
+Zarp aspires to be the window through which users can assess a network's exploitability and the trust dynamics within local intranets. Keep an eye out for Zeb, the web-app frontend for Zarp, in the near future.
