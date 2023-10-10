@@ -1,0 +1,10 @@
+Probely:- Probely  scans your Web Applications to find vulnerabilities or security
+issues and provides guidance on how to fix them, having Developers in
+mind.
+Probely not only features a sleek and intuitive interface but also follows
+an API-First development approach, providing all features through an
+
+API. This allows Probely to be integrated into Continuous Integration
+pipelines in order to automate security testing.
+Probely covers OWASP TOP10 and thousands of more vulnerabilities. It
+can also be used to check specific PCI-DSS, ISO27001, HIPAA, and GDPR requirements.
