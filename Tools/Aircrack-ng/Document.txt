@@ -1,18 +1,111 @@
 aircrack-ng - 802.11 WEP / WPA-PSK key cracker
 
-Synopsis
-aircrack-ng [options] <.cap / .ivs file(s)>
+## Introduction 
 
-Description
+Aircrack-ng is a popular suite of tools used for wireless network auditing and penetration testing.
+
+It is primarily used to assess the security of Wi-Fi networks by attempting to crack WEP and WPA/WPA2-PSK encryption keys. 
+
+## Synopsis
+ aircrack-ng [options] <.cap / .ivs file(s)>
+
+## Description
 aircrack-ng is a 802.11 WEP / WPA-PSK key cracker. It implements the so-called Fluhrer - Mantin - Shamir (FMS) attack, along with some
 new attacks by a talented hacker named KoreK. When enough encrypted packets have been gathered, aircrack-ng can almost instantly
 recover the WEP key.
 
-Options
+
+
+## Installation
+
+
+To install Aircrack-ng on your Linux system, you can use your distribution's package manager. 
+The exact commands may vary depending on your Linux distribution. Here are installation instructions for some common Linux distributions:
+
+Debian/Ubuntu:
+
+Open a terminal and run the following commands:
+
+Update the package list to make sure you have the latest information about available packages:
+
+ command :  sudo apt install aircrack-ng
+Fedora:
+
+  Install Aircrack-ng:
+        command : sudo dnf install aircrack-ng
+
+Arch Linux:
+
+command : yay -S aircrack-ng
+
+
+Kali Linux:
+
+Aircrack-ng is pre-installed in Kali Linux,
+ which is a specialized Linux distribution for penetration testing and ethical hacking. 
+ You can access Aircrack-ng tools directly from the Kali Linux menu or terminal.
+
+
+This command should display the version information for Aircrack-ng, indicating that the installation was successful.
+
+ command :  aircrack-ng --version
+
+
+
+# Aircrack-ng consists of several command-line tools, including:
+
+1) aircrack-ng: Used for cracking WEP and WPA/WPA2-PSK keys.
+2) aireplay-ng: Used for packet injection and replay attacks.
+3) airodump-ng: Used for capturing packets from Wi-Fi networks.
+4) airmon-ng: Used for enabling and disabling monitor mode on wireless interfaces.
+5) packetforge-ng: Used for creating custom packets for injection attacks.
+
+
+Aircrack-ng is a powerful suite of command-line tools used for wireless network auditing and security testing. Below is a list of some of the core Aircrack-ng tools, along with a brief description of their functions:
+
+aircrack-ng:
+
+Description: Aircrack-ng is used for cracking WEP and WPA/WPA2-PSK keys by analyzing the packets captured during a wireless network monitoring session.
+Command: aircrack-ng <capture-file>
+aireplay-ng:
+
+Description: Aireplay-ng is used for packet injection, deauthentication attacks, and replay attacks to test the security of wireless networks.
+Command: aireplay-ng <options>
+airodump-ng:
+
+Description: Airodump-ng is used for capturing packets from wireless networks. It provides information about nearby networks, their clients, and various statistics.
+Command: airodump-ng <options>
+airmon-ng:
+
+Description: Airmon-ng is used for enabling and disabling monitor mode on wireless network interfaces, which is essential for capturing packets and conducting various attacks.
+Command: airmon-ng <options>
+packetforge-ng:
+
+Description: Packetforge-ng is used to create custom wireless packets for injection attacks and other testing purposes.
+Command: packetforge-ng <options>
+airdecap-ng:
+
+Description: Airdecap-ng is used to decrypt WEP and WPA/WPA2-PSK encrypted packets and display their contents.
+Command: airdecap-ng <options>
+ivstools:
+
+Description: Ivstools is a set of tools for manipulating and converting IVs (Initialization Vectors) used in WEP encryption.
+Command: Various commands for specific IV manipulation tasks.
+easside-ng:
+
+Description: Easside-ng is used for launching a variety of wireless attacks, including deauthentication and disassociation attacks, as well as generating fake access points.
+Command: easside-ng <options>
+wesside-ng:
+
+Description: Wesside-ng is a tool for cracking WEP keys by capturing weak IVs and using them to recover the WEP key.
+Command: wesside-ng <options>
+
+
+## Options
 -H, --help
 Shows the help screen.
 
-Common options:
+## Common options:
 -a <amode>
 Force the attack mode, 1 or wep for WEP and 2 or wpa for WPA-PSK.
 -e <essid>
